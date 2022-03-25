@@ -17,11 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hello', 'App\Http\Controllers\HelloController@index');
+Route::get('hello', 'App\Http\Controllers\HelloController@index')->name('hello.index');
 Route::post('hello', 'App\Http\Controllers\HelloController@post');
 
 Route::get('hello/add', 'App\Http\Controllers\HelloController@add')->name('hello.add');
 Route::post('hello/add', 'App\Http\Controllers\HelloController@create');
 
-Route::get('hello/edit', 'App\Http\Controllers\HelloController@edit')->name('hello.add');
+Route::get('hello/edit', 'App\Http\Controllers\HelloController@edit')->name('hello.edit');
 Route::post('hello/edit', 'App\Http\Controllers\HelloController@update');
+
+Route::get('hello/del', 'App\Http\Controllers\HelloController@del')->name('hello.del');
+Route::post('hello/del', 'App\Http\Controllers\HelloController@remove');
