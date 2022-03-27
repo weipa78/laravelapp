@@ -28,3 +28,11 @@ Route::post('hello/edit', 'App\Http\Controllers\HelloController@update');
 
 Route::get('hello/del', 'App\Http\Controllers\HelloController@del')->name('hello.del');
 Route::post('hello/del', 'App\Http\Controllers\HelloController@remove');
+
+Route::get('person', 'App\Http\Controllers\PersonController@index');
+
+Route::get('person/find', 'App\Http\Controllers\PersonController@find')->name('person.find');
+Route::post('person/find', 'App\Http\Controllers\PersonController@search');
+
+Route::get('person/add', 'App\Http\Controllers\PersonController@add')->name('person.add');
+Route::post('person/add', 'App\Http\Controllers\PersonController@create');
